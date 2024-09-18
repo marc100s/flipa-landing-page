@@ -5,14 +5,13 @@ import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "Flipa Bread està aquí per... flipar! Flipa Bread és la nova creació per tornar als origens del pa fet al moment amb ingredients naturals. I està a fet a Barcelona!";
 ---
 
 <!doctype html>
@@ -67,7 +66,6 @@ const description =
       <Intro />
       <Features />
       <Compatibility />
-      <Showcase />
     </div>
     <Footer />
   </body>

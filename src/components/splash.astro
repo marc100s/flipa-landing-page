@@ -2,21 +2,21 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import astronautImage from "~/assets/astronaut.png";
-import HeroImage from "~/components/hero-image.astro";
-import Starfield from "~/components/starfield.astro";
-import GitHubCorner from "./github-corner.astro";
+import trigoImage from "~/assets/trigo.webm";
+// import HeroImage from "~/components/hero-image.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
-<section class="relative h-full bg-black">
-  <Starfield />
-  <GitHubCorner />
-  <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
-    <HeroImage />
+<section class="relative h-full bg-transparent">
+  <div class="video-background absolute inset-0 z-0">
+    <video autoplay loop muted class="object-cover w-full h-full">
+      <source src={trigoImage} type="video/mp4">
+    </video>
   </div>
-  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+
+  <div class="relative grid h-full place-items-center sm:grid-cols-2 z-10">
     <h2
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
@@ -24,9 +24,9 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl"
       >
-        Build fast
-        <br /> websites,
-        <br /> faster.
+      Flipa Bread està per
+        <br /> flipar,
+        <br /> Pa d'avui com el d'abans.
       </div>
     </h2>
     <div
@@ -68,12 +68,22 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     animation: float linear 2.5s infinite alternate;
   }
 
+  .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     #astronaut {
       @apply animate-none;
     }
 
-    :global(#starfield) {
+    :global(#video-background) {
       @apply hidden;
     }
 
