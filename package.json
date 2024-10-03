@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "build": "astro build && tailwindcss -i ./src/styles/index.css -o ./dist/output.css --watch",
+    "preview": "astro preview && tailwindcss -i ./src/styles/index.css -o ./dist/output.css --watch",
     "astro": "astro",
     "format": "prettier --write **/*.astro .",
     "clean": "rimraf dist .astro node_modules"

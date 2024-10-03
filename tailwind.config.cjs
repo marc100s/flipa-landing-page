@@ -6,14 +6,17 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+        primary: ["Stencil", ...defaultTheme.fontFamily.sans],
+        secondary: ["Caveat", "cursive"],
       },
       colors: {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
-      },
-      textColor: {
-        default: "var(--color-text)",
-        offset: "var(--color-text-offset)",
+        text: {
+          light: "var(--color-text-light)",  
+          dark: "var(--color-text-dark)",    
+          default: "var(--color-text-light)", // Default for text-default
+        },
       },
       backgroundColor: {
         default: "var(--color-background)",
@@ -25,7 +28,8 @@ module.exports = {
     },
   },
   corePlugins: {
-    fontSize: false,
+    fontSize: false, // Custom fonts, sizes handled manually or with fluid type plugin
   },
   plugins: [require("tailwindcss-fluid-type")],
+  output: './dist/output.css',
 };

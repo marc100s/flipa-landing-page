@@ -6,6 +6,7 @@ import type { NavItem } from "~/types";
 const navItems: Array<NavItem> = [
   { title: "Features", url: "#features" },
   { title: "Compatibility", url: "#compatibility" },
+  { title: "Mapa", url: "#onenstrobaras" },
 ];
 ---
 
@@ -13,8 +14,8 @@ const navItems: Array<NavItem> = [
   id="page-header"
   class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
+  <a class="flex items-center gap-3" href="#">
+    <h1 class="sr-only">Flipa Bread</h1>
     <Icon name="logomark" class="size-10" />
     <Icon name="wordmark" class="hidden h-4 sm:block" />
   </a>
@@ -44,7 +45,7 @@ const navItems: Array<NavItem> = [
       <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
-      <div class="fixed inset-0 bg-default px-8 py-4 text-default">
+      <div class="fixed inset-0 bg-default px-8 py-4">
         <div class="space-y-4" role="dialog" aria-modal="true">
           <header class="text-right">
             <button
@@ -129,7 +130,7 @@ const navItems: Array<NavItem> = [
 <style>
   .fixed-header {
     @apply fixed bottom-auto top-0;
-    @apply border-default bg-default text-default;
+    @apply border-default bg-default;
   }
   .modal.is-open {
     @apply block;

@@ -1,5 +1,35 @@
-/* TODO: consider creating <Button> and <GradientText> components */
+@import "global.css";
+@import "theme.css"; 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 a,
+
+body {
+     font-family: 'Stencil', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Caveat', cursive; 
+}
+
+@font-face {
+  font-family: 'Stencil';
+  src: url('/src/assets/fonts/stencil.ttf') format('ttf'),
+       url('/src/assets/fonts/stencil.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: url('/src/assets/fonts/caveat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .btn {
   @apply transition-colors duration-200;
   @apply hover:text-secondary;
@@ -8,7 +38,26 @@ a,
 
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  background-image: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
+}
+
+.text-default {
+  color: var(--color-text-light); /* Or dark, depending on your theme */
+}
+
+@layer utilities {
+  .bg-clip-text {
+    background-clip: text;
+  }
+  .text-default {
+    color: var(--color-text-light); /* Or dark, depending on your theme */
+  }
+  .bg-default {
+    background-color: var(--color-background);
+  }
+  .border-default {
+    border-color: var(--color-border);
+  }
 }
 
 .video-background {

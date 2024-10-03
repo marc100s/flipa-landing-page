@@ -1,0 +1,15 @@
+---
+const { text } = Astro.props;
+---
+
+<span class="gradient-text">
+  {text}
+</span>
+
+<style>
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    text-emphasis-color: black;
+    background-image: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
+  }
+</style>

@@ -1,0 +1,14 @@
+---
+const { label } = Astro.props;
+---
+
+<button class="btn-gradient">
+  {label}
+</button>
+
+<style>
+  .btn-gradient {
+    @apply px-4 py-2 rounded-lg text-white;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  }
+</style>
